@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HelloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello','App\Http\Controllers\HelloController@index');
+Route::get('/hello','App\Http\Controllers\HelloController@index')->name('hello');
+Route::get('/hello', [HelloController::class, 'index']);//use文を記述すればこの書き方もできる
+
