@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello','App\Http\Controllers\HelloController@index')->name('hello');
-Route::get('/hello', [HelloController::class, 'index']);//use文を記述すればこの書き方もできる
+//Route::get('/hello', [HelloController::class, 'index']);//use文を記述すればこの書き方もできる
+Route::get('/hello/other','App\Http\Controllers\HelloController@other');
+
 
