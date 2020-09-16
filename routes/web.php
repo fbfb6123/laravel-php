@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello','App\Http\Controllers\HelloController@index')->name('hello');
+//Route::get('/hello','App\Http\Controllers\HelloController@index')->name('hello');
+Route::get('/hello/{id}','App\Http\Controllers\HelloController@index')->where('id','[0-9]+');
+
 //Route::get('/hello', [HelloController::class, 'index']);//use文を記述すればこの書き方もできる
 Route::get('/hello/other','App\Http\Controllers\HelloController@other');
 
